@@ -17,12 +17,14 @@ def read_json(file_path):
 def execute_tasks(tasks):
     if tasks:
         for task in tasks:
-            task_type = task.get('type')
-            if task_type:
-                st.write(f"Ejecutando tarea: {task_type}")
-                # Aquí deberías agregar la lógica para ejecutar la tarea real basada en 'task'
+            if isinstance(task, dict):
+                task_type = task.get('type')
+                if task_type:
+                    st.write(f"Ejecutando tarea: {task_type}")
+                else:
+                    st.write("Error: Tarea no tiene el atributo 'type'")
             else:
-                st.write("Error: Tarea no tiene el atributo 'type'")
+                st.write("Error: Formato de tarea inválido. Cada tarea debe ser un diccionario.")
     else:
         st.error("No se pudieron ejecutar las tareas porque el archivo JSON no se cargó correctamente.")
 
@@ -46,9 +48,13 @@ def schedule_daily_tasks(tasks, hour, minute):
 st.title('Automatización de Tareas con Streamlit')
 
 # Leer el archivo JSON con las tareas automatizadas
-tasks = read_json('312.json')
+tasks_data = read_json('312.json')
+tasks = tasks_data.get('steps') if tasks_data else None
+
 if tasks:
     st.write("Tareas cargadas exitosamente.")
+else:
+    st.error("No se pudieron cargar las tareas del archivo JSON.")
 
 if st.button('Iniciar Automatización'):
     if tasks:

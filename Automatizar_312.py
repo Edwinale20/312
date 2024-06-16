@@ -12,7 +12,11 @@ def read_json(file_path):
 # Función para ejecutar las tareas automatizadas (simulada)
 def execute_tasks(tasks):
     for task in tasks:
-        st.write(f"Ejecutando tarea: {task['type']}")
+        task_type = task.get('type')
+        if task_type:
+            st.write(f"Ejecutando tarea: {task_type}")
+        else:
+            st.write("Error: Tarea no tiene el atributo 'type'")
 
 # Función para calcular el tiempo restante hasta la siguiente ejecución
 def time_until_next_execution(hour, minute):
@@ -34,8 +38,12 @@ def schedule_daily_tasks(tasks, hour, minute):
 st.title('Automatización de Tareas con Streamlit')
 
 # Leer el archivo JSON con las tareas automatizadas
-tasks = read_json('312.json')
-st.write("Tareas cargadas exitosamente.")
+try:
+    tasks = read_json('312.json')
+    st.write("Tareas cargadas exitosamente.")
+except Exception as e:
+    st.write(f"Error al cargar el archivo JSON: {e}")
+    tasks = []
 
 if st.button('Iniciar Automatización'):
     st.write('Las tareas se ejecutarán todos los días a las 4:40 PM.')

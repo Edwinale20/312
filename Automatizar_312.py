@@ -1,8 +1,13 @@
 import streamlit as st
 import json
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from threading import Thread
 import time
 from datetime import datetime, timedelta
-from threading import Thread
 
 # Función para leer el archivo JSON
 def read_json(file_path):
@@ -13,20 +18,34 @@ def read_json(file_path):
         st.error(f"Error al leer el archivo JSON: {e}")
         return None
 
-# Función para ejecutar las tareas automatizadas (simulada)
+# Función para ejecutar las tareas automatizadas usando Selenium
 def execute_tasks(tasks):
-    if tasks:
+    driver = webdriver.Chrome(executable_path='path/to/chromedriver')  # Cambia el path al chromedriver
+    try:
         for task in tasks:
-            if isinstance(task, dict):
-                task_type = task.get('type')
-                if task_type:
-                    st.write(f"Ejecutando tarea: {task_type}")
-                else:
-                    st.write("Error: Tarea no tiene el atributo 'type'")
+            task_type = task.get('type')
+            if task_type == 'navigate':
+                driver.get(task['url'])
+            elif task_type == 'click':
+                selector = task['selectors'][0]
+                WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+                element = driver.find_element(By.CSS_SELECTOR, selector)
+                element.click()
+            elif task_type == 'change':
+                selector = task['selectors'][0]
+                WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+                element = driver.find_element(By.CSS_SELECTOR, selector)
+                element.clear()
+                element.send_keys(task['value'])
+            elif task_type == 'setViewport':
+                driver.set_window_size(task['width'], task['height'])
             else:
-                st.write("Error: Formato de tarea inválido. Cada tarea debe ser un diccionario.")
-    else:
-        st.error("No se pudieron ejecutar las tareas porque el archivo JSON no se cargó correctamente.")
+                st.write(f"Tipo de tarea no soportada: {task_type}")
+        st.success("Tareas completadas exitosamente.")
+    except Exception as e:
+        st.error(f"Error al ejecutar las tareas: {e}")
+    finally:
+        driver.quit()
 
 # Función para calcular el tiempo restante hasta la siguiente ejecución
 def time_until_next_execution(hour, minute):

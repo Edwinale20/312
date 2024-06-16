@@ -40,5 +40,9 @@ st.write("Tareas cargadas exitosamente.")
 if st.button('Iniciar Automatización'):
     st.write('Las tareas se ejecutarán todos los días a las 4:40 PM.')
     # Ejecutar en un nuevo hilo para no bloquear la interfaz de usuario de Streamlit
-    t = Thread(target=schedule_daily_tasks, args=(tasks, 16, 46))
+    t = Thread(target=schedule_daily_tasks, args=(tasks, 16, 40))
     t.start()
+
+if st.button('Ejecutar Tareas Manualmente'):
+    st.write('Ejecutando tareas manualmente.')
+    execute_tasks(tasks)

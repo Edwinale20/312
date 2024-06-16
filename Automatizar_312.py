@@ -38,7 +38,7 @@ tasks = read_json('312.json')
 st.write("Tareas cargadas exitosamente.")
 
 if st.button('Iniciar Automatización'):
-    st.write('Las tareas se ejecutarán todos los días a las 4:40 AM.')
+    st.write('Las tareas se ejecutarán todos los días a las 4:40 PM.')
     # Ejecutar en un nuevo hilo para no bloquear la interfaz de usuario de Streamlit
-    t = Thread(target=schedule_daily_tasks, args=(tasks, 4, 40))
+    t = Thread(target=schedule_daily_tasks, args=(tasks, 16, 46))
     t.start()

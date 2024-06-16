@@ -6,17 +6,25 @@ from threading import Thread
 
 # Función para leer el archivo JSON
 def read_json(file_path):
-    with open(file_path, 'r') as file:
-        return json.load(file)
+    try:
+        with open(file_path, 'r') as file:
+            return json.load(file)
+    except Exception as e:
+        st.error(f"Error al leer el archivo JSON: {e}")
+        return None
 
 # Función para ejecutar las tareas automatizadas (simulada)
 def execute_tasks(tasks):
-    for task in tasks:
-        task_type = task.get('type')
-        if task_type:
-            st.write(f"Ejecutando tarea: {task_type}")
-        else:
-            st.write("Error: Tarea no tiene el atributo 'type'")
+    if tasks:
+        for task in tasks:
+            task_type = task.get('type')
+            if task_type:
+                st.write(f"Ejecutando tarea: {task_type}")
+                # Aquí deberías agregar la lógica para ejecutar la tarea real basada en 'task'
+            else:
+                st.write("Error: Tarea no tiene el atributo 'type'")
+    else:
+        st.error("No se pudieron ejecutar las tareas porque el archivo JSON no se cargó correctamente.")
 
 # Función para calcular el tiempo restante hasta la siguiente ejecución
 def time_until_next_execution(hour, minute):
@@ -38,19 +46,22 @@ def schedule_daily_tasks(tasks, hour, minute):
 st.title('Automatización de Tareas con Streamlit')
 
 # Leer el archivo JSON con las tareas automatizadas
-try:
-    tasks = read_json('312.json')
+tasks = read_json('312.json')
+if tasks:
     st.write("Tareas cargadas exitosamente.")
-except Exception as e:
-    st.write(f"Error al cargar el archivo JSON: {e}")
-    tasks = []
 
 if st.button('Iniciar Automatización'):
-    st.write('Las tareas se ejecutarán todos los días a las 4:40 PM.')
-    # Ejecutar en un nuevo hilo para no bloquear la interfaz de usuario de Streamlit
-    t = Thread(target=schedule_daily_tasks, args=(tasks, 16, 40))
-    t.start()
+    if tasks:
+        st.write('Las tareas se ejecutarán todos los días a las 4:40 PM.')
+        # Ejecutar en un nuevo hilo para no bloquear la interfaz de usuario de Streamlit
+        t = Thread(target=schedule_daily_tasks, args=(tasks, 16, 40))
+        t.start()
+    else:
+        st.error("No se pueden iniciar las tareas automáticas porque no se cargaron correctamente.")
 
 if st.button('Ejecutar Tareas Manualmente'):
-    st.write('Ejecutando tareas manualmente.')
-    execute_tasks(tasks)
+    if tasks:
+        st.write('Ejecutando tareas manualmente.')
+        execute_tasks(tasks)
+    else:
+        st.error("No se pueden ejecutar las tareas manualmente porque no se cargaron correctamente.")

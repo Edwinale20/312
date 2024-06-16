@@ -181,9 +181,6 @@
                     "aria/VALOR VENTA[role=\"gridcell\"]",
                     "aria/[role=\"generic\"]"
                 ],
-                "#gridview-1192-record-ext-record-1 div",
-                "xpath///*[@id=\"ext-gen1567\"]/div",
-                "pierce/#gridview-1192-record-ext-record-1 div",
                 "text/VALOR VENTA"
             ],
             "offsetX": 233,
@@ -378,11 +375,10 @@
         },
         {
             "type": "click",
-            "timeout": 20000,
+            "timeout": 30000,
             "target": "main",
             "selectors": [
-                "#treeview-1235-record-ID_CATEGORIA\\[\\[\\=\\]\\]8 div",
-                "xpath///*[@id=\"ext-gen1603\"]/div"
+                "#treeview-1235-record-ID_CATEGORIA\\[\\[\\=\\]\\]8 div"
             ],
             "offsetX": 268,
             "offsetY": 13

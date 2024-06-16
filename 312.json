@@ -1,0 +1,519 @@
+{
+    "title": "FDGD",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 794,
+            "height": 607,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "chrome://new-tab-page/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "chrome://new-tab-page/",
+                    "title": "New Tab"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Inventarios PDV[role=\"link\"]"
+                ],
+                [
+                    "ntp-app",
+                    "#mostVisited",
+                    "div:nth-of-type(3) > a"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > a"
+                ]
+            ],
+            "offsetY": 35,
+            "offsetX": 72
+        },
+        {
+            "type": "navigate",
+            "url": "http://sembirep.7-11.iconn.nt:7001/ejrep/login;jsessionid=3bMjFUyeNNyVe1SEk-Q5GjE_uZkuMxq0KzQv7eNkRtO7JfMetaEr!823944729",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://sembirep.7-11.iconn.nt:7001/ejrep/login;jsessionid=3bMjFUyeNNyVe1SEk-Q5GjE_uZkuMxq0KzQv7eNkRtO7JfMetaEr!823944729",
+                    "title": "Ejecutor de Reportes"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#j_username"
+                ],
+                [
+                    "xpath///*[@id=\"j_username\"]"
+                ],
+                [
+                    "pierce/#j_username"
+                ]
+            ],
+            "offsetY": 13.359375,
+            "offsetX": 107.3125
+        },
+        {
+            "type": "change",
+            "value": "E584057",
+            "selectors": [
+                [
+                    "#j_username"
+                ],
+                [
+                    "xpath///*[@id=\"j_username\"]"
+                ],
+                [
+                    "pierce/#j_username"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "EOGJ",
+            "selectors": [
+                [
+                    "#j_password"
+                ],
+                [
+                    "xpath///*[@id=\"j_password\"]"
+                ],
+                [
+                    "pierce/#j_password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://sembirep.7-11.iconn.nt:7001/ejrep/",
+                    "title": "Ejecutor de Reportes"
+                }
+            ],
+            "timeout": 15000,
+            "target": "main",
+            "selectors": [
+                "aria/Ingresar[role=\"button\"]",
+                "tr:nth-of-type(3) input",
+                "xpath//html/body/div[3]/form/table/tbody/tr[3]/td/input",
+                "pierce/tr:nth-of-type(3) input",
+                "text/Ingresar"
+            ],
+            "offsetX": 108.953125,
+            "offsetY": 25.359375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#panel-1034-innerCt"
+                ],
+                [
+                    "xpath///*[@id=\"panel-1034-innerCt\"]"
+                ],
+                [
+                    "pierce/#panel-1034-innerCt"
+                ]
+            ],
+            "offsetY": 5,
+            "offsetX": 186.453125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#tool-1103-toolEl"
+                ],
+                [
+                    "xpath///*[@id=\"tool-1103-toolEl\"]"
+                ],
+                [
+                    "pierce/#tool-1103-toolEl"
+                ]
+            ],
+            "offsetY": 2,
+            "offsetX": 5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#menuitem-1086-iconEl"
+                ],
+                [
+                    "xpath///*[@id=\"menuitem-1086-iconEl\"]"
+                ],
+                [
+                    "pierce/#menuitem-1086-iconEl"
+                ]
+            ],
+            "offsetY": 1,
+            "offsetX": 5
+        },
+        {
+            "type": "click",
+            "timeout": 15000,
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/VALOR VENTA[role=\"gridcell\"]",
+                    "aria/[role=\"generic\"]"
+                ],
+                "#gridview-1192-record-ext-record-1 div",
+                "xpath///*[@id=\"ext-gen1567\"]/div",
+                "pierce/#gridview-1192-record-ext-record-1 div",
+                "text/VALOR VENTA"
+            ],
+            "offsetX": 233,
+            "offsetY": 10
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1200-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1200-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1200-btnIconEl"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 6
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]10 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1560\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]10 div"
+                ]
+            ],
+            "offsetY": 5,
+            "offsetX": 284
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1223-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1223-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1223-btnIconEl"
+                ]
+            ],
+            "offsetY": 4,
+            "offsetX": 5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]20 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1561\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]20 div"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 288
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1223-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1223-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1223-btnIconEl"
+                ]
+            ],
+            "offsetY": 6,
+            "offsetX": 7
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]30 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1562\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]30 div"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 295
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1223-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1223-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1223-btnIconEl"
+                ]
+            ],
+            "offsetY": 6,
+            "offsetX": 10
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]50 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1563\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1213-record-ID_DIVISION\\[\\[\\=\\]\\]50 div"
+                ]
+            ],
+            "offsetY": 6,
+            "offsetX": 268
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1223-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1223-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1223-btnIconEl"
+                ]
+            ],
+            "offsetY": 4,
+            "offsetX": 7
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1235-record-ID_GRUPO\\[\\[\\=\\]\\]1 img.x-tree-elbow-img"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1569\"]/div/img[1]"
+                ],
+                [
+                    "pierce/#treeview-1235-record-ID_GRUPO\\[\\[\\=\\]\\]1 img.x-tree-elbow-img"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 10
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1235-record-ID_DEPARTAMENTO\\[\\[\\=\\]\\]4 img.x-tree-elbow-plus"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1589\"]/div/img[2]"
+                ],
+                [
+                    "pierce/#treeview-1235-record-ID_DEPARTAMENTO\\[\\[\\=\\]\\]4 img.x-tree-elbow-plus"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 10
+        },
+        {
+            "type": "click",
+            "timeout": 20000,
+            "target": "main",
+            "selectors": [
+                "#treeview-1235-record-ID_CATEGORIA\\[\\[\\=\\]\\]8 div",
+                "xpath///*[@id=\"ext-gen1603\"]/div"
+            ],
+            "offsetX": 268,
+            "offsetY": 13
+        },
+        {
+            "type": "click",
+            "timeout": 15000,
+            "target": "main",
+            "selectors": [
+                "#button-1245-btnIconEl",
+                "xpath///*[@id=\"button-1245-btnIconEl\"]",
+                "pierce/#button-1245-btnIconEl"
+            ],
+            "offsetX": 8,
+            "offsetY": 9
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1235-record-ID_CATEGORIA\\[\\[\\=\\]\\]62 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1619\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1235-record-ID_CATEGORIA\\[\\[\\=\\]\\]62 div"
+                ]
+            ],
+            "offsetY": 11,
+            "offsetX": 301
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1245-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1245-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1245-btnIconEl"
+                ]
+            ],
+            "offsetY": 5,
+            "offsetX": 9
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#treeview-1257 div"
+                ],
+                [
+                    "xpath///*[@id=\"ext-gen1572\"]/div"
+                ],
+                [
+                    "pierce/#treeview-1257 div"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 274
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#button-1267-btnIconEl"
+                ],
+                [
+                    "xpath///*[@id=\"button-1267-btnIconEl\"]"
+                ],
+                [
+                    "pierce/#button-1267-btnIconEl"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 6
+        },
+        {
+            "type": "click",
+            "timeout": 5000,
+            "target": "main",
+            "selectors": [
+                "#textfield-1273-inputEl",
+                "xpath///*[@id=\"textfield-1273-inputEl\"]",
+                "pierce/#textfield-1273-inputEl",
+                "text/65000"
+            ],
+            "offsetX": 93,
+            "offsetY": 15
+        },
+        {
+            "type": "change",
+            "value": "650000000000000",
+            "selectors": [
+                [
+                    "#textfield-1273-inputEl"
+                ],
+                [
+                    "xpath///*[@id=\"textfield-1273-inputEl\"]"
+                ],
+                [
+                    "pierce/#textfield-1273-inputEl"
+                ],
+                [
+                    "text/65000"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "timeout": 25000,
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Exportar Detalle Por Tienda y Artículo",
+                    "aria/[role=\"image\"]"
+                ],
+                "#btnInforme2-btnIconEl",
+                "xpath///*[@id=\"btnInforme2-btnIconEl\"]",
+                "pierce/#btnInforme2-btnIconEl"
+            ],
+            "offsetX": 141.609375,
+            "offsetY": 1
+        }
+    ]
+}

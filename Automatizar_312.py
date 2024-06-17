@@ -2,7 +2,6 @@ import streamlit as st
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from threading import Thread
@@ -20,7 +19,7 @@ def read_json(file_path):
 
 # Función para ejecutar las tareas automatizadas usando Selenium
 def execute_tasks(tasks):
-    driver = webdriver.Chrome(executable_path='path/to/chromedriver')  # Cambia el path al chromedriver
+    driver = webdriver.Chrome(executable_path='/content/drive/MyDrive/tu_carpeta/chromedriver.exe')  # Cambia el path al chromedriver
     try:
         for task in tasks:
             task_type = task.get('type')
@@ -67,7 +66,7 @@ def schedule_daily_tasks(tasks, hour, minute):
 st.title('Automatización de Tareas con Streamlit')
 
 # Leer el archivo JSON con las tareas automatizadas
-tasks_data = read_json('312.json')
+tasks_data = read_json('/content/drive/MyDrive/tu_carpeta/312.json')
 tasks = tasks_data.get('steps') if tasks_data else None
 
 if tasks:
